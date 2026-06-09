@@ -56,18 +56,6 @@ src/
 
 ---
 
-## Lancement
-
-```bash
-# Compiler
-javac --module-path $PATH_TO_FX --add-modules javafx.controls,javafx.fxml -d out src/**/*.java
-
-# Exécuter
-java --module-path $PATH_TO_FX --add-modules javafx.controls,javafx.fxml -cp out Main
-```
-
----
-
 ## Dépendances
 
 - [JavaFX](https://openjfx.io/) — interface graphique
