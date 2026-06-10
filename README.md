@@ -7,7 +7,6 @@ Application desktop JavaFX avec architecture MVC. Transformations d'images, syst
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=flat&logo=openjdk&logoColor=white)
 ![JavaFX](https://img.shields.io/badge/JavaFX-007396?style=flat&logo=java&logoColor=white)
 ![Jackson](https://img.shields.io/badge/Jackson-JSON-brightgreen?style=flat)
-![MIT](https://img.shields.io/badge/Licence-MIT-4f8ef7?style=flat)
 
 <br/>
 
