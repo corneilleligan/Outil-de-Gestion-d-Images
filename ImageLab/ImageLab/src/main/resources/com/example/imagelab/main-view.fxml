@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.geometry.Insets?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.example.imagelab.MainController"
+           fx:id="rootPane"
+           style="-fx-background-color: #f4f5f7;">
+
+    <VBox>
+
+        <HBox alignment="CENTER_LEFT" spacing="12"
+              style="-fx-background-color: #1e2a3a;
+                     -fx-padding: 14 24 14 24;
+                     -fx-min-height: 58;
+                     -fx-max-height: 58;">
+
+            <Label text="ImageLab"
+                   style="-fx-font-size: 16px;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: white;
+                          -fx-padding: 0 20 0 0;"/>
+
+            <Separator orientation="VERTICAL"
+                       style="-fx-background-color: #3a4a5a;
+                              -fx-opacity: 0.6;"/>
+
+            <Button text="Charger une image" onAction="#ouvrirImage"
+                    style="-fx-background-color: #3b82f6;
+                           -fx-text-fill: white;
+                           -fx-font-size: 12px;
+                           -fx-font-weight: bold;
+                           -fx-background-radius: 6;
+                           -fx-border-color: transparent;
+                           -fx-padding: 8 18;
+                           -fx-cursor: hand;"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <HBox alignment="CENTER" spacing="8">
+                <TextField fx:id="rechercheField"
+                           promptText="Rechercher par tag..."
+                           prefWidth="220"
+                           style="-fx-background-color: #2d3f52;
+                                  -fx-background-radius: 6;
+                                  -fx-border-color: #3a4a5a;
+                                  -fx-border-radius: 6;
+                                  -fx-border-width: 1;
+                                  -fx-padding: 8 12;
+                                  -fx-font-size: 12px;
+                                  -fx-text-fill: #e0e0e0;
+                                  -fx-prompt-text-fill: #6a7f95;"/>
+                <Button text="Rechercher" onAction="#rechercherTag"
+                        style="-fx-background-color: #2d3f52;
+                               -fx-text-fill: #3b82f6;
+                               -fx-font-size: 12px;
+                               -fx-font-weight: bold;
+                               -fx-background-radius: 6;
+                               -fx-border-color: #3b82f6;
+                               -fx-border-width: 1;
+                               -fx-border-radius: 6;
+                               -fx-padding: 8 16;
+                               -fx-cursor: hand;"/>
+                <Label fx:id="rechercheResultat" text=""
+                       style="-fx-font-size: 11px;
+                              -fx-text-fill: #4caf7d;"/>
+            </HBox>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <HBox fx:id="boxTags" alignment="CENTER" spacing="8"
+                  visible="false" managed="false">
+                <TextField fx:id="tagField"
+                           promptText="Nouveau tag..."
+                           prefWidth="150"
+                           style="-fx-background-color: #2d3f52;
+                                  -fx-background-radius: 6;
+                                  -fx-border-color: #3a4a5a;
+                                  -fx-border-radius: 6;
+                                  -fx-border-width: 1;
+                                  -fx-padding: 8 12;
+                                  -fx-font-size: 12px;
+                                  -fx-text-fill: #e0e0e0;
+                                  -fx-prompt-text-fill: #6a7f95;"/>
+                <Button text="Ajouter" onAction="#ajouterTag"
+                        style="-fx-background-color: #22c55e;
+                               -fx-text-fill: white;
+                               -fx-font-size: 12px;
+                               -fx-font-weight: bold;
+                               -fx-background-radius: 6;
+                               -fx-border-color: transparent;
+                               -fx-padding: 8 14;
+                               -fx-cursor: hand;"/>
+                <Button text="Supprimer" onAction="#supprimerTag"
+                        style="-fx-background-color: #ef4444;
+                               -fx-text-fill: white;
+                               -fx-font-size: 12px;
+                               -fx-font-weight: bold;
+                               -fx-background-radius: 6;
+                               -fx-border-color: transparent;
+                               -fx-padding: 8 14;
+                               -fx-cursor: hand;"/>
+            </HBox>
+
+        </HBox>
+
+        <TitledPane fx:id="panneauOutils"
+                    text="Outils generaux"
+                    expanded="false"
+                    visible="false" managed="false"
+                    style="-fx-font-size: 12px;
+                           -fx-font-weight: bold;
+                           -fx-text-fill: #444;
+                           -fx-background-color: #ffffff;
+                           -fx-border-color: #e0e0e0;
+                           -fx-border-width: 0 0 1 0;">
+            <HBox spacing="8" alignment="CENTER_LEFT"
+                  style="-fx-padding: 10 20;
+                         -fx-background-color: #ffffff;">
+
+                <Label text="Transformation"
+                       style="-fx-font-size: 11px;
+                              -fx-text-fill: #999;
+                              -fx-font-weight: bold;"/>
+
+                <Button text="Rotation" onAction="#appliquerRotation"
+                        style="-fx-background-color: #ede9fe;
+                               -fx-text-fill: #6d28d9;
+                               -fx-font-size: 12px;
+                               -fx-font-weight: bold;
+                               -fx-background-radius: 6;
+                               -fx-border-color: transparent;
+                               -fx-padding: 7 16;
+                               -fx-cursor: hand;"/>
+
+                <Button text="Symetrie" onAction="#appliquerSymetrie"
+                        style="-fx-background-color: #ede9fe;
+                               -fx-text-fill: #6d28d9;
+                               -fx-font-size: 12px;
+                               -fx-font-weight: bold;
+                               -fx-background-radius: 6;
+                               -fx-border-color: transparent;
+                               -fx-padding: 7 16;
+                               -fx-cursor: hand;"/>
+
+                <Separator orientation="VERTICAL"
+                           style="-fx-padding: 0 4;"/>
+
+                <Label text="Securite"
+                       style="-fx-font-size: 11px;
+                              -fx-text-fill: #999;
+                              -fx-font-weight: bold;"/>
+
+                <Button text="Chiffrer" onAction="#chiffrerImage"
+                        style="-fx-background-color: #fef3c7;
+                               -fx-text-fill: #b45309;
+                               -fx-font-size: 12px;
+                               -fx-font-weight: bold;
+                               -fx-background-radius: 6;
+                               -fx-border-color: transparent;
+                               -fx-padding: 7 16;
+                               -fx-cursor: hand;"/>
+
+                <Button text="Dechiffrer" onAction="#dechiffrerImage"
+                        style="-fx-background-color: #fef3c7;
+                               -fx-text-fill: #b45309;
+                               -fx-font-size: 12px;
+                               -fx-font-weight: bold;
+                               -fx-background-radius: 6;
+                               -fx-border-color: transparent;
+                               -fx-padding: 7 16;
+                               -fx-cursor: hand;"/>
+
+                <Separator orientation="VERTICAL"
+                           style="-fx-padding: 0 4;"/>
+
+                <Label text="Historique"
+                       style="-fx-font-size: 11px;
+                              -fx-text-fill: #999;
+                              -fx-font-weight: bold;"/>
+
+                <Button text="Annuler" onAction="#annulerDerniereAction"
+                        style="-fx-background-color: #f1f5f9;
+                               -fx-text-fill: #475569;
+                               -fx-font-size: 12px;
+                               -fx-font-weight: bold;
+                               -fx-background-radius: 6;
+                               -fx-border-color: #cbd5e1;
+                               -fx-border-width: 1;
+                               -fx-border-radius: 6;
+                               -fx-padding: 7 16;
+                               -fx-cursor: hand;"/>
+
+                <Button text="Reinitialiser" onAction="#reinitialiserImage"
+                        style="-fx-background-color: #fee2e2;
+                               -fx-text-fill: #b91c1c;
+                               -fx-font-size: 12px;
+                               -fx-font-weight: bold;
+                               -fx-background-radius: 6;
+                               -fx-border-color: transparent;
+                               -fx-padding: 7 16;
+                               -fx-cursor: hand;"/>
+
+            </HBox>
+        </TitledPane>
+
+
+        <TitledPane fx:id="panneauFiltres"
+                    text="Filtres"
+                    expanded="false"
+                    visible="false" managed="false"
+                    style="-fx-font-size: 12px;
+                           -fx-font-weight: bold;
+                           -fx-text-fill: #444;
+                           -fx-background-color: #ffffff;
+                           -fx-border-color: #e0e0e0;
+                           -fx-border-width: 0 0 1 0;">
+            <HBox spacing="8" alignment="CENTER_LEFT"
+                  style="-fx-padding: 10 20;
+                         -fx-background-color: #ffffff;">
+
+                <Button text="Noir et Blanc" onAction="#appliquerFiltreNB"
+                        style="-fx-background-color: #f0f9ff;
+                               -fx-text-fill: #0369a1;
+                               -fx-font-size: 12px;
+                               -fx-font-weight: bold;
+                               -fx-background-radius: 6;
+                               -fx-border-color: transparent;
+                               -fx-padding: 7 16;
+                               -fx-cursor: hand;"/>
+
+                <Button text="Sepia" onAction="#appliquerFiltreSepia"
+                        style="-fx-background-color: #f0f9ff;
+                               -fx-text-fill: #0369a1;
+                               -fx-font-size: 12px;
+                               -fx-font-weight: bold;
+                               -fx-background-radius: 6;
+                               -fx-border-color: transparent;
+                               -fx-padding: 7 16;
+                               -fx-cursor: hand;"/>
+
+                <Button text="Echange RGB" onAction="#appliquerFiltreRGB"
+                        style="-fx-background-color: #f0f9ff;
+                               -fx-text-fill: #0369a1;
+                               -fx-font-size: 12px;
+                               -fx-font-weight: bold;
+                               -fx-background-radius: 6;
+                               -fx-border-color: transparent;
+                               -fx-padding: 7 16;
+                               -fx-cursor: hand;"/>
+
+                <Button text="Prewitt" onAction="#appliquerFiltrePrewitt"
+                        style="-fx-background-color: #f0f9ff;
+                               -fx-text-fill: #0369a1;
+                               -fx-font-size: 12px;
+                               -fx-font-weight: bold;
+                               -fx-background-radius: 6;
+                               -fx-border-color: transparent;
+                               -fx-padding: 7 16;
+                               -fx-cursor: hand;"/>
+
+            </HBox>
+        </TitledPane>
+
+        <StackPane VBox.vgrow="ALWAYS" alignment="CENTER"
+                   style="-fx-background-color: #f4f5f7;">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <VBox fx:id="placeholder" alignment="CENTER" spacing="14"
+                  style="-fx-background-color: white;
+                         -fx-background-radius: 10;
+                         -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 10, 0, 0, 2);
+                         -fx-padding: 60 80;">
+
+                <Label text="Aucune image chargee"
+                       style="-fx-font-size: 18px;
+                              -fx-font-weight: bold;
+                              -fx-text-fill: #cbd5e1;"/>
+
+                <Label text="Cliquez sur Charger une image pour commencer"
+                       style="-fx-font-size: 13px;
+                              -fx-text-fill: #94a3b8;"/>
+
+                <Button text="Charger une image" onAction="#ouvrirImage"
+                        style="-fx-background-color: #3b82f6;
+                               -fx-text-fill: white;
+                               -fx-font-size: 13px;
+                               -fx-font-weight: bold;
+                               -fx-background-radius: 8;
+                               -fx-border-color: transparent;
+                               -fx-padding: 10 28;
+                               -fx-cursor: hand;"/>
+            </VBox>
+
+            <VBox alignment="CENTER" spacing="10"
+                  maxWidth="Infinity" maxHeight="Infinity"
+                  style="-fx-background-color: white;
+                         -fx-background-radius: 10;
+                         -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 10, 0, 0, 2);
+                         -fx-padding: 20;">
+
+                <StackPane VBox.vgrow="ALWAYS" alignment="CENTER">
+                    <ImageView fx:id="imageView"
+                               fitWidth="860" fitHeight="460"
+                               preserveRatio="true"/>
+                </StackPane>
+
+                <Label fx:id="statusLabel" text=""
+                       style="-fx-font-size: 12px;
+                              -fx-text-fill: #94a3b8;"/>
+            </VBox>
+
+        </StackPane>
+
+    </VBox>
+
+</StackPane>
