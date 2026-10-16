@@ -20,9 +20,9 @@ Application desktop JavaFX avec architecture MVC. Transformations d'images, syst
 
 **Transformations**
 - Rotation et symétrie (horizontale / verticale)
-- Filtre noir et blanc — moyenne des composantes RGB
+- Filtre noir et blanc - moyenne des composantes RGB
 - Filtre sépia
-- Filtre Prewitt — détection de contours
+- Filtre Prewitt - détection de contours
 - Échange des composantes RGB → GBR
 
 **Organisation**
@@ -38,7 +38,7 @@ Application desktop JavaFX avec architecture MVC. Transformations d'images, syst
 
 ## Architecture
 
-Le projet suit le patron **MVC** — interfaces décrites en FXML, contrôleurs dédiés aux interactions, logique métier isolée dans des classes séparées.
+Le projet suit le patron **MVC** - interfaces décrites en FXML, contrôleurs dédiés aux interactions, logique métier isolée dans des classes séparées.
 
 ```
 src/
@@ -57,5 +57,5 @@ src/
 
 ## Dépendances
 
-- [JavaFX](https://openjfx.io/) — interface graphique
-- [Jackson](https://github.com/FasterXML/jackson) — sérialisation JSON
+- [JavaFX](https://openjfx.io/) - interface graphique
+- [Jackson](https://github.com/FasterXML/jackson) - sérialisation JSON
